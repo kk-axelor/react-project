@@ -1,0 +1,206 @@
+.chat {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid rgba(255, 255, 255, 0.25);
+
+    .top {
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+
+        .user {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            img {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+            }
+
+            p {
+                font-size: 1.2rem;
+                color: white;
+            }
+
+            span {
+                color: #a5a5a5;
+
+            }
+        }
+
+        .icons {
+            display: flex;
+            gap: 10px;
+
+            img {
+                cursor: pointer;
+                width: 20px;
+                height: 20px;
+                object-fit: cover;
+            }
+
+        }
+    }
+
+    .center {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        border: 4px;
+        width: 100%;
+        gap: 20px;
+        padding: 10px;
+        overflow-y: scroll;
+       
+        .messageContainer {
+            display: flex;
+            gap: 10px;
+            width: 70%;
+            padding: 10px;
+            border-radius: 5px;
+            position: relative;
+            .texts{
+                .message{
+                    font-size: 1rem;
+                }
+                display: flex;
+                flex-direction: column;
+                gap:5px;
+                .timeago{
+                    font-size: .8rem;
+                }
+            }
+
+            img {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                gap: 10px;
+            }
+
+            &.own {
+                background-color: #4f46e5;
+                align-self: flex-end;
+
+                &::after {
+
+                    transform: rotate(45deg);
+                    background-color: white;
+                    content: "";
+                    position: absolute;
+                    background-color: rgba(48, 48, 54, 0.431);
+                    right: -7px;
+                    top: 10px;
+                    width: 15px;
+                    height: 15px;
+                    background-color: #4f46e5;
+
+                }
+            }
+
+            &.other {
+                background-color: rgba(48, 48, 54, 0.592);
+                &::before{
+                    transform: rotate(45deg);
+                    background-color: white;
+                    content: "";
+                    position: absolute;
+                    left: -7px;
+                    top: 10px;
+                    width: 15px;
+                    height: 15px;
+                    background-color: rgba(48, 48, 54, 0.592);
+                }
+            }
+        }
+    }
+
+    .bottom {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        .icons {
+            display: flex;
+            gap: 10px;
+
+            img {
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+
+            }
+        }
+
+        input {
+            flex: 1;
+            background-color: transparent;
+            border: none;
+            background-color: rgba(30, 30, 41, 0.433);
+            padding: 10px;
+            border-radius: 5px;
+            color: white;
+            font-size: 1rem;
+
+            &:focus {
+                outline: none;
+            }
+
+            &::placeholder {
+                color: rgba(255, 255, 255, 0.789);
+            }
+        }
+
+        .emoji {
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            cursor: pointer;
+            position: relative;
+
+            img {
+                width: 100%;
+                height: 100%;
+
+            }
+
+            .emojiPickerContainer {
+                position: absolute;
+                bottom: 40px;
+                right: 0;
+            }
+        }
+
+        button {
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            border: none;
+            border-radius: .2rem;
+            background-color: rgb(78, 106, 198);
+            color: white;
+
+        }
+    }
+}
+
+.center::-webkit-scrollbar{
+    width: 5px;
+}
+.center::-webkit-scrollbar-track{
+    box-shadow: 0 8px 32px 0 rgba(24, 31, 128, 0.37);
+   }
+.center::-webkit-scrollbar-thumb{
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background-color: rgba(12, 12, 12, 0.581);
+
+}
